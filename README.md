@@ -1,6 +1,6 @@
 # VFCExtractor-CLI
-> :bulb:  视频人脸批量提取 + 相似度聚类，CLI 操作。
-> :bulb: Batch extract faces from videos, cluster them by similarity, via CLI.
+> :bulb:  视频人脸批量提取 + 相似度聚类，CLI 操作
+> :bulb:  Batch extract faces from videos, cluster them by similarity, via CLI
 
 ## 一. 项目介绍 / Project Introduction
 ### 1. 核心功能 / Core Functions
@@ -92,7 +92,7 @@ Data preprocessing for AI related tasks (e.g., face dataset construction, annota
 - exp_face_z_fix: 导出人脸中心点的Z轴（垂直方向）偏移像素值（默认-20）
 > 非必要不推荐修改  
 - exp_face_size: 导出人脸图片的分辨率（默认512），格式为N（代表N×N像素）  
-> 取值建议：128/256/512/1024  
+> 取值建议：128 / 256 / 512 / 1024  
 - export_cluster_min_len: 人脸聚类最小数量阈值（默认5）  
 > 作用：聚类后，数量小于该值的人脸簇会被归类到"Others"类别，不单独导出  
 > 取值建议：3~10（过滤少量零散的误检/低频次人脸，减少无效导出文件）  
@@ -155,6 +155,7 @@ Data preprocessing for AI related tasks (e.g., face dataset construction, annota
 - **Demo2**
 聚类结果：
 ![demo2_clusters](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/demo2_clusters.png)
+
 聚类效果：
 ![demo2_effect](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/demo2_effect.png)
 ---
