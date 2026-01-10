@@ -1,0 +1,12 @@
+{
+  "work_path": "./workspace",
+  "exp_video_mode": "A",
+  "exp_video_frame_limit": 30,
+  "face_confidence_thresh": 0.8,
+  "img_max_face": 10,
+  "exp_face_scale_factor": 0.75,
+  "exp_face_z_fix": -20,
+  "exp_face_size": 512,
+  "export_cluster_min_len": 20,
+  "similarity_threshold": 0.5
+}
