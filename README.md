@@ -4,29 +4,29 @@
 
 ## 一. 项目介绍 / Project Introduction
 ### 1. 核心功能 / Core Functions
-- 批量从本地视频文件中检测、提取人脸图像，并基于相似度自动聚类
-Batch detect and extract facial images from local video files in bulk, and automatically cluster based on similarity 
-- 命令行（或IDE）使用，支持自定义参数 
+- 批量从本地视频文件中检测、提取人脸图像，并基于相似度自动聚类<br>
+Batch detect and extract facial images from local video files in bulk, and automatically cluster based on similarity <br>
+- 命令行（或IDE）使用，支持自定义参数 <br>
 Via CLI or IDE, supporting custom parameters
 
 ### 2. 应用场景 / Application Scenarios
-- 个人/小团队视频处理自动化、轻量化人脸分组需求
-Video processing automation and lightweight face grouping needs for individuals/small teams
-- AI 视觉任务上下游数据预处理（如人脸数据集构建、标注辅助）
+- 个人/小团队视频处理自动化、轻量化人脸分组需求 <br>
+Video processing automation and lightweight face grouping needs for individuals/small teams <br>
+- AI 视觉任务上下游数据预处理（如人脸数据集构建、标注辅助） <br>
 Data preprocessing for AI related tasks (e.g., face dataset construction, annotation assistance)
 
 ### 3. 效果演示 / Effect Demo
 以《一生所爱》mv作为演示视频（MP4格式，分辨率1104x622，时长4分52秒），输出结果如下：
-- 以视频名为目录存放导出的帧图片及face_set的聚类文件夹：
-![demo_outputs](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/demo_outputs.PNG)
-- 聚类文件夹1：紫霞（朱茵），18张
-![demo_cluster1](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/demo_cluster1.PNG)
-- 聚类文件夹2：至尊宝（猴哥），8张
-![demo_cluster2](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/demo_cluster2.PNG)
-- 聚类文件夹3：至尊宝（星爷），5张
-![demo_cluster3](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/demo_cluster3.PNG)
-- 文件夹4（Others）： 群演与配角，53张
-![demo_cluster_others](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/demo_cluster_others.PNG)
+- 以视频名为目录存放导出的帧图片及face_set的聚类文件夹： <br>
+![demo_outputs](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/demo_outputs.PNG) <br>
+- 聚类文件夹1：紫霞（朱茵），18张 <br>
+![demo_cluster1](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/demo_cluster1.PNG) <br>
+- 聚类文件夹2：至尊宝（猴哥），8张 <br>
+![demo_cluster2](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/demo_cluster2.PNG) <br>
+- 聚类文件夹3：至尊宝（星爷），5张 <br>
+![demo_cluster3](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/demo_cluster3.PNG) <br>
+- 文件夹4（Others）： 群演与配角，53张 <br>
+![demo_cluster_others](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/demo_cluster_others.PNG) <br>
 
 > :bulb: 说明<br>
 > - 通过调整不同的自定义参数，可达成不同聚类效果，其中Others为不满足最小聚类数量的统一汇总<br>
@@ -43,10 +43,10 @@ Data preprocessing for AI related tasks (e.g., face dataset construction, annota
 1) 首先将要处理的本地视频文件，放入项目的workspace目录下（默认工作目录，可在配置文件中修改）
 > :warning: 注意：当前仅支持后缀为mp4/avi/mov/mkv格式的文件，且当前不会遍历工作目录下的子目录中的任何文件
 2) 接下来选择如下两种方式中任意一种执行：
-- IDE执行，参考：
-![IDE_execute](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/IDE_execute.png)
-- 命令行执行(powershell or cmd)，参考：
-![CLI_execute](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/CLI_execute.png)
+- IDE执行，参考： <br>
+![IDE_execute](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/IDE_execute.png) <br>
+- 命令行执行(powershell or cmd)，参考： <br>
+![CLI_execute](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/CLI_execute.png) <br>
 
 3) 查看输出结果，如聚类效果不满意，则修改配置文件中的参数后重复执行
 > :bulb: 输出结果说明：在工作目录下，按照视频名称生成对应文件夹目录，内含视频帧切片及face_set文件夹，face_set下按人脸聚类分不同目录归档了人脸图片，聚类文件夹名称中的括号内的数字为其中的人脸图片数量，方便快速检索
@@ -104,7 +104,7 @@ Data preprocessing for AI related tasks (e.g., face dataset construction, annota
 > 建议取值: 无，根据视频中图像质量差别较大，聚类不满意请反复调整该值重试
  
 ### 4. 进阶选项 / Advanced Options
- 适用于有经验的程序员或开发者，可参考实现介绍部分信息，自行修改代码实现灵活调用
+ 适用于有经验的程序员或开发者，可参考实现介绍部分信息，自行修改代码实现灵活调用 <br>
  > :bulb:  提示<br>
  > - VFCWorks类中封装了工作流中的所有核心节点，Main中仅起到对VFCWorks中的功能做编排（顺序）调用<br>
  > - 进阶用户可修改并调用Main_debug，自行编排，或更灵活的调用VFCWorks中的核心功能节点<br>
@@ -115,10 +115,10 @@ Data preprocessing for AI related tasks (e.g., face dataset construction, annota
 
 ## 三. 实现介绍 / Implementation Introduction
 ### 1. 原理流程
-**核心流程**：将视频导出帧图片->逐张图片识别人脸->人脸embedding->相似度聚类->导出
-![workflow](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/workflow.PNG)
-### 2. 架构/代码结构/功能说明 / Architecture/Code Structure/Function Description
-![architecture](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/architecture.PNG)
+**核心流程**：将视频导出帧图片->逐张图片识别人脸->人脸embedding->相似度聚类->导出 <br>
+![workflow](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/workflow.PNG) <br>
+### 2. 架构/代码结构/功能说明 / Architecture/Code Structure/Function Description 
+![architecture](https://github.com/iciferdai/VFCExtractor-CLI/blob/main/images/architecture.PNG) <br>
 - VFCWorks类封装提供所有需执行的元子功能，管理数据结构（含任务列表、人脸坐标、embedding等）
 - Main/Main_Debug按工作流组装的方式，调用VFCWorks完成自动任务
 - VFCWorks依赖调用2大关键类：FFmpegExport、AIRuntime
@@ -127,8 +127,8 @@ Data preprocessing for AI related tasks (e.g., face dataset construction, annota
 - 所有类均依赖Utils/ConfigLoader提供基本公共能力，包括文件/目录处理、全局变量、日志等
 
 ## 四. 调参效果与性能数据参考 / Parameter Tuning Effect & Performance Data Reference
-为具体呈现不同参数下的效果及性能数据，以方便参考使用
-准备了覆盖不同类型和属性的4个视频作为Demo视频，如下：
+为具体呈现不同参数下的效果及性能数据，以方便参考使用<br>
+准备了覆盖不同类型和属性的4个视频作为Demo视频，如下：<br>
 |Demo|视频格式|视频时长|视频分辨率|视频帧率|视频内容简述|
 |-|-|-|-|-|-|
 |Demo1|mp4|4m52s|低分辨率(1104x622)|25|一生所爱MV（大话西游）|
@@ -138,7 +138,7 @@ Data preprocessing for AI related tasks (e.g., face dataset construction, annota
 
 
 
-###  各Demo达成基本聚类效果的关键参数及聚类效果信息：
+###  各Demo达成基本聚类效果的关键参数及聚类效果信息：<br>
 |Demo|关键聚类参数|导出视频帧数量|识别人脸总数|最大可聚类数|最终聚类数|最终聚类简介|
 |-|-|-|-|-|-|-|
 |Demo1|相似度阈值：0.4; 最小聚类数：4|96|84|40|4|女主-17/猴哥-8/男主-5/Others-54|
